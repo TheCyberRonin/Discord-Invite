@@ -1,0 +1,74 @@
+.DiscordInvite {
+  color: white;
+  background: rgba(47,49,54,.8);
+  width: 400px;
+  border: solid 1px rgba(47,49,54,.9);
+  padding: 10px 12px 10px 10px;
+  border-radius: 3px;
+}
+.DiscordInvite-Content {
+  display: flex;
+}
+.DiscordInvite-Message {
+  padding-bottom: 5px;
+}
+.DiscordInvite-Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 150px;
+}
+.DiscordInvite-Name {
+  font-weight: bold;
+  vertical-align: top;
+  font-size: large;
+}
+.DiscordInvite-Icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+  border-radius: 15px;
+}
+.DiscordInvite-Online-Members {
+  display: flex;
+  width: 225px;
+  justify-content: space-between;
+}
+.DiscordInvite-Button {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  flex-basis: 60px;
+  margin-left: auto;
+  text-align: center;
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color .17s ease;
+  border-radius: 3px;
+}
+.DiscordInvite-Button:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.DiscordInvite-MembersCircle{
+  width: 5px;
+  height: 5px;
+  background: grey;
+  border-radius: 50%;
+  transform: translate(0%,50%);
+  margin-right: 3px;
+  display: inline-block;
+}
+.DiscordInvite-OnlineCircle {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: green;
+  transform: translate(0%,50%);
+  margin-right: 3px;
+  display: inline-block;
+}
+.DiscordInvite-Online, .DiscordInvite-Members {
+  font-size: small;
+}
