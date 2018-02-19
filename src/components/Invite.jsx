@@ -33,20 +33,22 @@ class Invite extends Component
     let button = '';
     let online = '';
     let offline = '';
+    let invite = '';
     if (this.state.data.guild !== undefined)
     {
+      invite = `https://discord.gg/${this.props.code}`;
       online = <span className="DiscordInvite-OnlineCircle">&nbsp;</span>;
       offline = <span className="DiscordInvite-MembersCircle">&nbsp;</span>;
-      serverIcon =  <img className="DiscordInvite-Icon" src={`https\://cdn.discordapp.com/icons/${this.state.data.guild.id}/${this.state.data.guild.icon}.png`} />;
-      serverName = <span className="DiscordInvite-Name">{this.state.data.guild.name}</span>;
+      serverIcon =  <a href={invite}><img className="DiscordInvite-Icon" src={`https\://cdn.discordapp.com/icons/${this.state.data.guild.id}/${this.state.data.guild.icon}.png`} /></a>;
+      serverName = <span className="DiscordInvite-Name"><a href={invite}>{this.state.data.guild.name}</a></span>;
       serverInfo = <div className="DiscordInvite-Info">
       {serverName}
         <div className="DiscordInvite-Online-Members">
-        <span className="DiscordInvite-Online">{online}{`${this.state.data.approximate_presence_count} Online`}</span>
-        <span className="DiscordInvite-Members">{offline}{`${this.state.data.approximate_member_count} Members`}</span>
+        <span className="DiscordInvite-Online">{online}{`${this.state.data.approximate_presence_count.toLocaleString()} Online`}</span>
+        <span className="DiscordInvite-Members">{offline}{`${this.state.data.approximate_member_count.toLocaleString()} Members`}</span>
         </div>
       </div>
-      button = <a className="DiscordInvite-Button">Join</a>;
+      button = <a className="DiscordInvite-Button" href={invite}>Join</a>;
     }
     return(
       <div className="DiscordInvite">
