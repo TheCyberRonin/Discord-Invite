@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .DiscordInvite {
   color: white;
-  background: rgba(47,49,54,.8);
+  background: rgba(47,49,54,.9);
   width: 400px;
-  border: solid 1px rgba(47,49,54,.9);
+  border: solid 1px rgba(47,49,54,1);
   padding: 10px 12px 10px 10px;
   border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
 }
 .DiscordInvite-Content {
   display: flex;
@@ -12,6 +15,8 @@
 }
 .DiscordInvite-Message {
   padding-bottom: 5px;
+  font-size: .75em;
+  font-weight: bold;
 }
 .DiscordInvite-Info {
   display: flex;

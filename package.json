@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./webpack/webpack.config.js --display-error-details",
-    "dev": "node ./lib/server.js"
+    "dev": "node ./test/server.js"
   },
   "repository": {
     "type": "git",

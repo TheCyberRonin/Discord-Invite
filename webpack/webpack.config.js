@@ -40,6 +40,7 @@ module.exports = {
   },
   plugins: [
     new UglifyJSPlugin({minimze: true}),
-    new ExtractTextPlugin('DiscordInvite.min.css')
+    new ExtractTextPlugin('DiscordInvite.min.css'),
+    new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'})
   ]
 };

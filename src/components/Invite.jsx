@@ -8,6 +8,9 @@ class Invite extends Component
     super(props);
     this.state = {data: {}};
     this.setData = this.setData.bind(this);
+    this.locale = {
+      en: {invite: "YOU'VE BEEN INVITED TO JOIN A SERVER", members: 'Members', online: 'Online'}
+    }
     let set = this.setData;
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
@@ -44,15 +47,15 @@ class Invite extends Component
       serverInfo = <div className="DiscordInvite-Info">
       {serverName}
         <div className="DiscordInvite-Online-Members">
-        <span className="DiscordInvite-Online">{online}{`${this.state.data.approximate_presence_count.toLocaleString()} Online`}</span>
-        <span className="DiscordInvite-Members">{offline}{`${this.state.data.approximate_member_count.toLocaleString()} Members`}</span>
+        <span className="DiscordInvite-Online">{online}{`${this.state.data.approximate_presence_count.toLocaleString()} ${this.locale[this.props.lang].online}`}</span>
+        <span className="DiscordInvite-Members">{offline}{`${this.state.data.approximate_member_count.toLocaleString()} ${this.locale[this.props.lang].members}`}</span>
         </div>
       </div>
       button = <a className="DiscordInvite-Button" href={invite}>Join</a>;
     }
     return(
       <div className="DiscordInvite">
-        <span className="DiscordInvite-Message">You have been invited to a server.</span>
+        <span className="DiscordInvite-Message">{this.locale[this.props.lang].invite}</span>
         <div className="DiscordInvite-Content">
           {serverIcon}
           {serverInfo}
